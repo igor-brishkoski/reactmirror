@@ -1,4 +1,4 @@
-.logo {
-    width: 250px;
-    height: 150px;
+.clock {
+    position: absolute;
+    margin: 120px;
 }
