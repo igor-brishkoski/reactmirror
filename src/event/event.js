@@ -2,6 +2,8 @@ import React from 'react';
 import './event.css';
 import axios from 'axios';
 
+const REFRESH_INTERVAL = 1800000;
+
 export class Event extends React.Component{
 
     constructor(props){
@@ -9,10 +11,23 @@ export class Event extends React.Component{
 
         this.state = {
             event:{}
-        }
+        };
+
+        this.loadEvent()
     }
 
     componentDidMount() {
+        this.timerID = setInterval(
+            () => this.loadEvent(),
+            REFRESH_INTERVAL
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    loadEvent(){
         axios.get(`https://staging-membersapi.wework.com/api/v5/events/b3dc8900-9bcc-0135-1118-6216183e35b7?encrypted_user_uuid=5aAWvRhO9aZY8cIEhkxs069aNiitbdNipFWE0Y-HiKEgN3D3VbT_ThvJOgLDRMJu`)
             .then(res => {
                 const event = res.data;
