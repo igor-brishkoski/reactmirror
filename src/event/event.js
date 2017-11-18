@@ -7,16 +7,16 @@ export class Event extends React.Component {
     render() {
         return (
             <div className="event">
-                <div className="center-cropped" style={{backgroundImage: "url(" + this.props.event.image_url + ")"}}>
+                <div className="event center-cropped" style={{backgroundImage: "url(" + this.props.event.image_url + ")"}}>
 
                 </div>
                 <h1>{this.props.event.name}</h1>
                 <div className="details-container   ">
                     <div className="eventtime">
-                        <h2>{`${this.props.event.date_string} - ${this.props.event.time_string}`}</h2>
+                        <h3>{`${this.props.event.date_string} - ${this.props.event.time_string}`}</h3>
                     </div>
                     <div className="location">
-                        <h2>{this.props.event.community}</h2>
+                        <h3>{this.props.event.community}</h3>
                     </div>
                 </div>
                 <div className="description">
