@@ -29,8 +29,9 @@ export class Clock extends React.Component {
     render() {
         return (
             <div>
-                <img className="logo" src="http://probusinesschannelusa.com/wp-content/uploads/2016/01/WeWork-logo2-300x169.jpg"/>
-                <h2>{this.state.date.toLocaleString([], { hour: 'numeric',minute:'numeric'})}</h2>
+                <img className="logo"
+                     src="http://probusinesschannelusa.com/wp-content/uploads/2016/01/WeWork-logo2-300x169.jpg"/>
+                <h2>{this.state.date.toLocaleString([], {hour: 'numeric', minute: 'numeric'})}</h2>
             </div>
         );
     }

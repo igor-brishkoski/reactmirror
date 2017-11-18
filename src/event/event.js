@@ -4,13 +4,13 @@ import axios from 'axios';
 
 const REFRESH_INTERVAL = 1800000;
 
-export class Event extends React.Component{
+export class Event extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
-            event:{}
+            event: {}
         };
 
         this.loadEvent()
@@ -27,15 +27,16 @@ export class Event extends React.Component{
         clearInterval(this.timerID);
     }
 
-    loadEvent(){
-        axios.get(`https://staging-membersapi.wework.com/api/v5/events/b3dc8900-9bcc-0135-1118-6216183e35b7?encrypted_user_uuid=5aAWvRhO9aZY8cIEhkxs069aNiitbdNipFWE0Y-HiKEgN3D3VbT_ThvJOgLDRMJu`)
+    loadEvent() {
+        axios.get(`https://staging-membersapi.wework.com/api/v6/events/mobile?encrypted_user_uuid=5aAWvRhO9aZY8cIEhkxs069aNiitbdNipFWE0Y-HiKEgN3D3VbT_ThvJOgLDRMJu`)
             .then(res => {
-                const event = res.data;
-                this.setState({ event });
+                const event = res.data.events[0];
+                console.log(res.data.events[0]);
+                this.setState({event});
             });
     }
 
-    render(){
+    render() {
         return (
             <div className="event">
                 <div className="center-cropped" style={{backgroundImage: "url(" + this.state.event.image_url + ")"}}>
