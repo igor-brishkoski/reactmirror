@@ -1,0 +1,20 @@
+.eventCard {
+    width: 600px;
+    padding: 32px;
+}
+
+.center-croppedCard {
+    width: 200px;
+    height: 200px;
+    background: no-repeat center center;
+    float: left;
+}
+
+.details-containerCard {
+    overflow: hidden;
+    padding-left: 32px;
+}
+
+.eventCardTitle{
+    /*margin: 0;*/
+}
