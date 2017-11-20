@@ -34,7 +34,7 @@ class App extends React.Component {
     }
 
     loadEvent() {
-        axios.get(`https://staging-membersapi.wework.com/api/v6/events/mobile?encrypted_user_uuid=5aAWvRhO9aZY8cIEhkxs069aNiitbdNipFWE0Y-HiKEgN3D3VbT_ThvJOgLDRMJu`)
+        axios.get(`https://staging-membersapi.wework.com/api/v6/events/mobile`)
             .then(res => {
                 console.log(res.data.events);
                 this.setState({
