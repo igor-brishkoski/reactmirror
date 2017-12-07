@@ -6,13 +6,12 @@ export class EventCard extends React.Component {
     renderCard(event) {
         return (
             <div className="eventCard" key={event.uuid}>
-                <div className="center-croppedCard" style={{backgroundImage: "url(" + event.image_url + ")"}}>
-                </div>
+                <div className="center-croppedCard" style={{backgroundImage: "url(" + event.image_url + ")"}}></div>
 
                 <div className="details-containerCard">
-                    <h3 className="eventCardTitle">{event.name}</h3>
-                    <p>{`${event.date_string} - ${event.time_string}`}</p>
-                    <p>{event.community}</p>
+                    <div className="header">{event.name}</div>
+                    <p className="small thin">{`${event.date_string} - ${event.time_string}`}</p>
+                    <p className="small thin">{event.community}</p>
                 </div>
             </div>
         );

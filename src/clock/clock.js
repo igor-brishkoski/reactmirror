@@ -28,9 +28,7 @@ export class Clock extends React.Component {
 
     render() {
         return (
-            <div className="clock">
-                <h2>{this.state.date.toLocaleString([], {hour: 'numeric', minute: 'numeric'})}</h2>
-            </div>
+            <div className="clock thin">{this.state.date.toLocaleString([], {hour: 'numeric', minute: 'numeric'})}</div>
         );
     }
 }

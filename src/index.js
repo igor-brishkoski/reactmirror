@@ -34,12 +34,12 @@ class App extends React.Component {
     }
 
     loadEvent() {
-        axios.get(`https://staging-membersapi.wework.com/api/v6/events/mobile`)
+        axios.get(`https://staging-membersapi.wework.com/api/v6/events/mobile?encrypted_user_uuid=`)
             .then(res => {
                 console.log(res.data.events);
                 this.setState({
                     event: res.data.events[0],
-                    events: res.data.events.slice(0, 3)
+                    events: res.data.events.slice(1, 4)
                 });
             });
     }
@@ -50,8 +50,8 @@ class App extends React.Component {
                 <Clock/>
                 <div className="content">
                     <Event event={this.state.event}/>
-                    <h1><u>Upcoming Events</u></h1>
-                    <EventCard events={this.state.events}/>
+                    {/* <div className="header"><u>Upcoming Events</u></div>
+                    <EventCard events={this.state.events}/> */}
                 </div>
             </div>
         );
