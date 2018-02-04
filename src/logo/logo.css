@@ -1,0 +1,28 @@
+.logo {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+
+}
+
+.logo img {
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+
+.logo .divider {
+    height: 1px;
+    width: 500px;
+    background-color: white;
+    display: block;
+    margin: auto;
+}
+
+.logo .text {
+	display: block;
+	margin: auto;
+	width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
